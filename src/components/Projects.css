@@ -1,0 +1,128 @@
+.projects {
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+
+/* Placeholder state */
+.projects__placeholder {
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 3.5rem 2rem;
+  text-align: center;
+}
+
+.projects__placeholder-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.projects__placeholder-title {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.projects__placeholder-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  max-width: 320px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.projects__coming-badge {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  border: 1px solid rgba(90, 143, 106, 0.3);
+  border-radius: 100px;
+  padding: 4px 12px;
+  background: var(--green-dim);
+}
+
+/* Project cards grid */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.projects__card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.projects__card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.projects__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.projects__card-title {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.projects__card-links {
+  display: flex;
+  gap: 10px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.projects__card-links a {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.projects__card-links a:hover {
+  color: var(--accent2);
+}
+
+.projects__card-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.projects__card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.projects__tag {
+  font-size: 11px;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 3px 10px;
+  background: var(--bg2);
+}

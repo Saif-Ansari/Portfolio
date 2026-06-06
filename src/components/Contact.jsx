@@ -1,0 +1,112 @@
+import { useState } from 'react'
+import { useInView } from '../hooks/useInView'
+import './Contact.css'
+
+// ─── Update your contact links here ──────────────────────────────────────────
+const CONTACT_EMAIL = 'sfansari007@gmail.com'
+const CONTACT_LINKEDIN = 'https://linkedin.com/in/saif-ansari-32b487137'
+const CONTACT_GITHUB = 'https://github.com/saif-ansari'
+// ─────────────────────────────────────────────────────────────────────────────
+
+export default function Contact() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [sent, setSent] = useState(false)
+  const ref = useInView()
+
+  const handleChange = (e) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Opens the user's email client with prefilled content.
+    // To connect a real form service (Formspree, EmailJS etc), replace this.
+    const subject = encodeURIComponent(`Portfolio contact from ${form.name}`)
+    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+    setSent(true)
+  }
+
+  return (
+    <section id="contact" className="contact">
+      <div className="container" ref={ref}>
+        <p className="section-eyebrow fade-up">Contact</p>
+        <h2 className="section-title fade-up" style={{ '--delay': '80ms' }}>
+          Let&apos;s <em>work together</em>
+        </h2>
+        <div className="section-divider fade-up" style={{ '--delay': '140ms' }} />
+
+        <div className="contact__inner">
+          <div className="contact__left fade-up" style={{ '--delay': '200ms' }}>
+            <p className="contact__desc">
+              I&apos;m open to senior remote frontend roles globally. If you&apos;re building
+              something ambitious — especially in robotics, real-time systems, or
+              complex web applications — I&apos;d love to hear from you.
+            </p>
+
+            <div className="contact__links">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="contact__link">
+                <span className="contact__link-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="M2 7l10 7 10-7" />
+                  </svg>
+                </span>
+                {CONTACT_EMAIL}
+              </a>
+
+              <a href={CONTACT_LINKEDIN} target="_blank" rel="noopener noreferrer" className="contact__link">
+                <span className="contact__link-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </span>
+                LinkedIn
+              </a>
+
+              <a href={CONTACT_GITHUB} target="_blank" rel="noopener noreferrer" className="contact__link">
+                <span className="contact__link-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                  </svg>
+                </span>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <form className="contact__form fade-up" style={{ '--delay': '320ms' }} onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              value={form.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="What are you working on?"
+              value={form.message}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit" className="contact__send-btn">
+              {sent ? 'Opening your email client →' : 'Send message →'}
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  )
+}

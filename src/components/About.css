@@ -1,0 +1,127 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about__text p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+}
+
+.about__text p:last-child {
+  margin-bottom: 0;
+}
+
+.about__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.about__highlight-item {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  transition: background 0.2s, padding-left 0.2s;
+  position: relative;
+}
+
+.about__highlight-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.about__highlight-item:last-child {
+  border-bottom: none;
+}
+
+.about__highlight-item:hover {
+  background: var(--bg3);
+  padding-left: 1.5rem;
+}
+
+.about__highlight-item:hover::before {
+  opacity: 1;
+}
+
+.about__hi-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.about__hi-value {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+@media (max-width: 680px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Stat counters */
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+  gap: 1px;
+}
+
+.about__stat {
+  background: var(--bg2);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.about__stat:hover {
+  background: var(--bg3);
+}
+
+.about__stat-num {
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  font-style: italic;
+  color: var(--accent2);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.about__stat-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+@media (max-width: 680px) {
+  .about__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
