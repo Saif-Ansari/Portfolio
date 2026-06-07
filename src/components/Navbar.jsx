@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './Navbar.css'
 
 // ─── Paste your Google Drive / Dropbox share URL here ────────────────────────
-const RESUME_URL = 'https://drive.google.com/file/d/1cP4-bb7QX3gt1_erYdIG5qsl8XZjeyxm/view?usp=drive_link'
+const RESUME_URL = 'https://drive.google.com/file/d/1nOFZRbTUAbdFNefIUhQHoBrZ8lEB_iOY/view?usp=drive_link'
 // ─────────────────────────────────────────────────────────────────────────────
 
 const links = [
