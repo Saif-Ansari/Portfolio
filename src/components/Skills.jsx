@@ -11,7 +11,7 @@ const skillGroups = [
       { name: 'React', level: 95 },
       { name: 'TypeScript', level: 92 },
       { name: 'JavaScript (ES2022+)', level: 95 },
-      { name: 'HTML5 / CSS3', level: 90 },
+      { name: 'Tailwind CSS', level: 88 },
     ],
   },
   {
@@ -21,17 +21,17 @@ const skillGroups = [
       { name: 'Webpack Module Federation', level: 88 },
       { name: 'Micro-frontends', level: 88 },
       { name: 'Redux', level: 90 },
-      { name: 'Component systems', level: 85 },
+      { name: 'Ionic / Capacitor', level: 85 },
     ],
   },
   {
     id: 3,
     title: 'Visualization & Real-time',
     skills: [
-      { name: 'Konva.js', level: 90 },
-      { name: 'Canvas APIs', level: 85 },
-      { name: 'ROS topics', level: 80 },
+      { name: 'Canvas APIs', level: 88 },
+      { name: 'Mapbox', level: 82 },
       { name: 'WebSockets', level: 88 },
+      { name: 'ROS topics', level: 80 },
     ],
   },
   {
@@ -40,7 +40,7 @@ const skillGroups = [
     skills: [
       { name: 'Jest', level: 88 },
       { name: 'React Testing Library', level: 88 },
-      { name: 'Webpack', level: 85 },
+      { name: 'MSW', level: 80 },
       { name: 'Git', level: 92 },
     ],
   },

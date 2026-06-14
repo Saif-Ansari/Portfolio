@@ -6,7 +6,7 @@ const highlights = [
   { label: 'Experience', value: '7 years in frontend engineering' },
   { label: 'Location', value: 'Nagpur, India · Open to remote globally' },
   { label: 'Specialty', value: 'Real-time UIs · Micro-frontends · Robotics' },
-  { label: 'Previously', value: 'Kuliza Technologies' },
+  { label: 'Previously', value: 'Kuliza Technologies · 3 yrs · React · insurance & SaaS' },
 ]
 
 const stats = [

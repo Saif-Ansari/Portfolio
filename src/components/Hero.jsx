@@ -44,7 +44,7 @@ export default function Hero() {
               <div className="t-gap" />
               <p className="t-cmd">$ cat stack.txt</p>
               <p className="t-out">&gt; React  TypeScript  Webpack&nbsp;MF</p>
-              <p className="t-out">&gt; Konva.js  Redux  ROS  WebSockets</p>
+              <p className="t-out">&gt; Mapbox  Redux  ROS  WebSockets</p>
               <div className="t-gap" />
               <p className="t-cmd">$ echo $STATUS</p>
               <p className="t-out">&gt; open_to_remote: true ✓</p>

@@ -6,20 +6,29 @@ const experiences = [
   {
     id: 1,
     date: '2022 – Present',
-    company: 'Rapyuta Robotics · Nagpur, India · Remote',
+    company: 'Rapyuta Robotics · Bangalore',
     role: 'Senior Frontend Engineer',
-    description:
-      'Sole frontend engineer responsible for the complete frontend architecture of a warehouse robotics platform. Built real-time robot state visualization using ROS topics, designed micro-frontend systems with Webpack Module Federation, and collaborated on-site in Tokyo with hardware teams to bridge the gap between robot behavior and operator UX.',
-    tags: ['React', 'TypeScript', 'Webpack Module Federation', 'Konva.js', 'Redux', 'ROS topics', 'Jest'],
+    highlights: [
+      'Took full ownership of a real-time warehouse operations dashboard — wrote the product spec and architecture design, shipped as an Android app and tablet-optimised web app used by operators on-site.',
+      'Pioneered Webpack Module Federation micro-frontend architecture in the org — the approach was adopted across all frontend products.',
+      'Built real-time robot state visualisation using 2D canvas rendering and live ROS data streams.',
+      'Contributed to a fleet management platform with real-time 3D map visualisation (deck.gl / Mapbox), robot fleet monitoring, and WMS integration.',
+      'Reduced the frontend bundle from ~18 MB to ~2 MB and resolved memory leaks caused by background workers.',
+      'Built and shipped a warehouse workflow Android APK for picking, stowing, replenishment, and auditing tasks.',
+      'Worked onsite in Tokyo collaborating directly with hardware and robotics teams.',
+    ],
+    tags: ['React', 'TypeScript', 'Ionic / Capacitor', 'Webpack Module Federation', 'Redux', 'deck.gl', 'ROS', 'WebSockets', 'Jest'],
   },
   {
     id: 2,
-    date: 'Prior',
-    company: 'Kuliza Technologies',
-    role: 'Frontend Engineer',
-    description:
-      'Worked across client projects delivering scalable frontend solutions. Developed strong foundations in React ecosystem, component architecture, and building for production.',
-    tags: ['React', 'JavaScript', 'CSS'],
+    date: '2019 – 2021',
+    company: 'Kuliza Technologies · Bangalore',
+    role: 'Frontend Developer',
+    highlights: [
+      'Built data management dashboards for school IT admins (Managed Methods) — full-text search, filters, sorting, pagination, and security analytics visualised with Recharts.',
+      'Delivered production-ready responsive pages and WhatsApp / SMS quote-request flows for Acko Insurance.',
+    ],
+    tags: ['React', 'JavaScript', 'Recharts', 'Ant Design', 'CSS'],
   },
 ]
 // ─────────────────────────────────────────────────────────────────────────────
@@ -44,7 +53,11 @@ export default function Experience() {
               </div>
               <div className="exp__company">{exp.company}</div>
               <h3 className="exp__role">{exp.role}</h3>
-              <p className="exp__desc">{exp.description}</p>
+              <ul className="exp__highlights">
+                {exp.highlights.map((point, j) => (
+                  <li key={j}>{point}</li>
+                ))}
+              </ul>
               <div className="exp__tags">
                 {exp.tags.map((tag) => (
                   <span key={tag} className="exp__tag">{tag}</span>
