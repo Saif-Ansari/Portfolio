@@ -22,6 +22,14 @@ const projects = [
     tags: ['React 18', 'Node.js', 'Express', 'MongoDB', 'Vite'],
     github: 'https://github.com/Saif-Ansari/Cadence',
   },
+  {
+    id: 2,
+    title: 'FODMAP Tracker — Gut Health Logger',
+    description: 'Personal health tracker for managing the Monash University Low-FODMAP elimination protocol. Log meals and bowel movements, spot meal-to-symptom patterns, and track week-on-week trends. Built to solve a real problem — existing FODMAP apps are food lookup tools, not symptom trackers. Features Supabase auth, per-user Row Level Security, responsive mobile + desktop layout, and CSV export for doctor visits.',
+    tags: ['React 18', 'Vite', 'Supabase', 'PostgreSQL', 'Vercel'],
+    github: 'https://github.com/Saif-Ansari/fodmap-tracker',
+    link: 'https://fodmap-tracker-inky.vercel.app/',
+  },
 ]
 // ─────────────────────────────────────────────────────────────────────────────
 
