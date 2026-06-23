@@ -30,6 +30,14 @@ const projects = [
     github: 'https://github.com/Saif-Ansari/fodmap-tracker',
     link: 'https://fodmap-tracker-inky.vercel.app/',
   },
+  {
+    id: 3,
+    title: 'Shelf — Read-it-Later App',
+    description: 'Personal read-it-later app built to solve the bookmark graveyard problem — articles saved and never read. Paste any URL, the title is auto-fetched, tag by topic, and track what you\'ve read. Features Supabase auth with row-level security, optimistic UI updates, responsive layout, and client-side filtering with no extra network calls.',
+    tags: ['React 18', 'TypeScript', 'Vite', 'Supabase', 'Zustand', 'Vercel'],
+    github: 'https://github.com/Saif-Ansari/shelf',
+    link: 'https://shelf-seven-kappa.vercel.app/',
+  },
 ]
 // ─────────────────────────────────────────────────────────────────────────────
 
