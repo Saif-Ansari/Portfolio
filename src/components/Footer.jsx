@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <span className="footer__name">Saif · Senior Frontend Engineer</span>
-      <span className="footer__right">Pune, India · Open to remote · {year}</span>
+      <span className="footer__right">Nagpur, India · Open to remote · {year}</span>
     </footer>
   )
 }
