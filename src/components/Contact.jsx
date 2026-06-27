@@ -29,6 +29,7 @@ export default function Contact() {
       if (res.ok) {
         setStatus('sent')
         setForm({ name: '', email: '', message: '' })
+        setTimeout(() => setStatus('idle'), 3000)
       } else {
         setStatus('error')
       }
