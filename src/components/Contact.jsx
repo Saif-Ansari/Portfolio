@@ -10,21 +10,31 @@ const CONTACT_GITHUB = 'https://github.com/saif-ansari'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState('idle') // idle | sending | sent | error
   const ref = useInView()
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Opens the user's email client with prefilled content.
-    // To connect a real form service (Formspree, EmailJS etc), replace this.
-    const subject = encodeURIComponent(`Portfolio contact from ${form.name}`)
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
-    setSent(true)
+    setStatus('sending')
+    try {
+      const res = await fetch(import.meta.env.VITE_FORMSPREE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setStatus('sent')
+        setForm({ name: '', email: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -101,9 +111,14 @@ export default function Contact() {
               onChange={handleChange}
               required
             />
-            <button type="submit" className="contact__send-btn">
-              {sent ? 'Opening your email client →' : 'Send message →'}
+            <button type="submit" className="contact__send-btn" disabled={status === 'sending' || status === 'sent'}>
+              {status === 'sending' ? 'Sending…' : status === 'sent' ? 'Message sent ✓' : status === 'error' ? 'Failed, try again →' : 'Send message →'}
             </button>
+            {status === 'error' && (
+              <p style={{ color: 'var(--color-accent, #e05)', fontSize: '0.85rem', marginTop: '0.5rem' }}>
+                Something went wrong. You can also email me directly at {CONTACT_EMAIL}.
+              </p>
+            )}
           </form>
         </div>
       </div>
