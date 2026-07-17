@@ -21,6 +21,7 @@ const projects = [
     description: 'Full-stack MERN app for tracking habits, goals, daily check-ins, and focus metrics. Built to solve a personal problem — designed to scale into a SaaS product. 12 screens designed across Dashboard, Goals, Habits, Check-in, Metrics, and Settings.',
     tags: ['React 18', 'Node.js', 'Express', 'MongoDB', 'Vite'],
     github: 'https://github.com/Saif-Ansari/Cadence',
+    link: 'https://cadence-tau-self.vercel.app',
   },
   {
     id: 2,
